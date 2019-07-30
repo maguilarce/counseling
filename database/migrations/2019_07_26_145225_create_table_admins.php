@@ -17,6 +17,7 @@ class CreateTableAdmins extends Migration
             $table->increments('id');
             $table->string("last_name");
             $table->string("first_name");
+            $table->string("title");
             $table->string("email");
             $table->string('status')->default('active');
             $table->timestamps();

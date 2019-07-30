@@ -22,6 +22,7 @@ class CreateTableStudentSession extends Migration
             $table->string('first_name');
             $table->string('email', 30)->unique();
             $table->string('contact_number');
+            $table->string('status');
             $table->timestamps();
         });
     }
