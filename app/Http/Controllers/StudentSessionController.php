@@ -14,7 +14,7 @@ class StudentSessionController extends Controller
 
     public function addStudent()
     {
-        echo "Welcome";
+        return view("admin.views.add_student");
     }
 
     public function deleteStudent()

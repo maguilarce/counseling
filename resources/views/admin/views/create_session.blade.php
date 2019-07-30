@@ -36,18 +36,17 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Date:</label>
-        
                         <div class="input-group date">
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type="text" data-provide="datepicker" class="form-control pull-right" id="datepicker">
+                          <input type="text" data-provide="datepicker" class="form-control pull-right" id="datepicker" name="datepicker">
                         </div>
                         <!-- /.input group -->
                       </div>
                       <div class="form-group">
-                        <label>Time:</label>
-                        <select class="form-control">
+                        <label>Session Time:</label>
+                        <select id="sessionTime" name="sessionTime" class="form-control">
                           <option>1:00 pm - 2:30 pm</option>
                           <option>6:00 pm - 7:30 pm</option>
                         </select>
@@ -55,7 +54,7 @@
 
                   <div class="form-group">
                     <label>Semester:</label>
-                    <select class="form-control">
+                    <select id="sessionSemester" name="sessionSemester" class="form-control">
                       <option>6193</option>
 
                     </select>
