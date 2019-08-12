@@ -24,15 +24,31 @@
   <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- general form elements -->
             <div class="box box-primary">
+
+              @if(session()->has("message"))
+                  <div class="alert alert-success">
+                    <p>{{ session('message') }}</p>
+                  </div>
+              @endif
+
+              @if(count($errors) > 0)
+              <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                  <p>{{ $error }}</p>
+                @endforeach
+
+              </div>
+              @endif
               <div class="box-header with-border">
                 <h3 class="box-title">Create a SLIP Session</h3>
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <form role="form" id='frm-create-session' method=''>
+              <form role="form" id='frm-create-session'  method='post' action="{{ route('savesession')  }}">
+                {!! csrf_field() !!}
                 <div class="box-body">
                     <div class="form-group">
                         <label>Date:</label>
@@ -47,8 +63,8 @@
                       <div class="form-group">
                         <label>Session Time:</label>
                         <select id="sessionTime" name="sessionTime" class="form-control">
-                          <option>1:00 pm - 2:30 pm</option>
-                          <option>6:00 pm - 7:30 pm</option>
+                          <option value="13:00:00">1:00 pm - 2:30 pm</option>
+                          <option value="18:00:00">6:00 pm - 7:30 pm</option>
                         </select>
                       </div>
 

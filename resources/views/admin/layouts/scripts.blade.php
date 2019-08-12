@@ -24,3 +24,52 @@
 <script src="{{ url('assets/js/sweetalert.js') }}"></script>
 <!-- Customized JS -->
 <script src="{{ url('assets/js/custom-script.js') }}"></script>
+
+
+<script>
+  $(function() {
+    if($('#sessions').length >0){
+        $('#sessions').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('listallsessions')}}",
+        columns: [
+                 { data: 'id', name: 'id' },
+                 { data: 'date', name: 'date' },
+                 { data: 'label', name: 'label' },
+                 { data: 'semester', name: 'semester' },
+                 { data: 'status', name: 'status' },
+                 { data: 'availability', name: 'availability' },
+                 { data: 'action_btns', name: 'action_btns'}
+                 
+                 
+              ]
+     });
+    }
+  });
+
+  $(function() {
+    if($('#students').length >0){
+        $('#students').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('listallstudents')}}",
+        columns: [
+                 { data: 'student_id', name: 'student_id' },
+                 { data: 'student_dob', name: 'student_dob' },
+                 { data: 'first_name', name: 'first_name' },
+                 { data: 'last_name', name: 'last_name' },
+                 { data: 'contact_number', name: 'contact_number' },
+                 { data: 'email', name: 'email' },
+                 { data: 'label', name: 'label' },
+                 { data: 'status', name: 'status' },
+                 { data: 'action_btns',name: 'action_btns'}
+                 // orderable: true,
+                 // searchable: true }
+                 
+                 
+              ]
+     });
+    }
+  });
+  </script>
